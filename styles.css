@@ -24,7 +24,7 @@
 }
 
 body {
-  background-color: #0e0a14;
+  background-color: #000000;
   padding-top: 5rem;
   overflow-x: hidden;
 }
@@ -44,6 +44,7 @@ canvas {
   background-color: #0e0a14;
   margin: auto;
   display: block;
+  transform: perspective(0);
 }
 
 #game {
@@ -62,6 +63,9 @@ canvas {
   color: #5316b4;
   font-size: 20px;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 button {
   border: 1px solid black;
@@ -137,7 +141,12 @@ button {
 
 section.play {
   position: fixed;
-  background: black;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
   display: flex;
   justify-content: center;
   padding: 4rem;
