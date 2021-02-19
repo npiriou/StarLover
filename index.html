@@ -4,51 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Star Lover</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="button_arcade.css" />
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
-      integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs="
-      crossorigin="anonymous"
-    ></script>
+    <title>Document</title>
   </head>
-  <body class="bodyIndex" onload="startGame()">
-    <h1 class="titre1"><span id="ScoreTitre">0</span> Star Lovers</h1>
-    <audio id="music" src="sounds/MusicGame.mp3" style="display: none" autoplay>
-      <source src="sounds/MusicGame.mp3" type="audio/mp3" />
-    </audio>
-    <div class="score" id="myScore">Score: 0</div>
-    <div style="text-align: center; width: 480px" id="game">
-      <div class="buttons">
-        <div class="main-buttons">
-          <div class="left-col">
-            <button class="button-direction" onclick="moveleft()">◀</button>
-          </div>
-          <div class="midle-col">
-            <button class="button-direction" onclick="moveup()">▲</button>
-            <button class="button-heart" onclick="shoot()">❤</button>
-            <button class="button-direction" onclick="movedown()">▼</button>
-          </div>
-          <div class="right-col">
-            <button class="button-direction" onclick="moveright()">▶</button>
-          </div>
-        </div>
-        <button class="button-special" onclick="pauseGame()">⏸️</button>
-        <button id="mute" class="mute button-special" onclick="enableMute()">
-          🔊
-        </button>
-
-        <button
-          class="push--flat"
-          style="font-size: 1rem; color: white"
-        ></button>
-        <button class="push--skeuo"></button>
-      </div>
-    </div>
+  <link rel="stylesheet" href="styles.css" />
+  
+  <body class="bodyAccueil">
+    <h1>Star Lover</h1>
+    <div class="fade"></div>
+    <section class="star-wars">
+      <p class="crawl">
+        It is a period of civil wars in the galaxy. A brave alliance of
+        underground freedom fighters has challenged the tyranny of WAR.
+        <br />The whole universe no longer knows love. You are the
+        <span>Star Lover</span>, your mission will be to convert and your cause
+        is just. May the love be with you.
+      </p>
+    </section>
+    <section class="play">
+      <a href="Game.html" class="btnPlay">PLAY NOW</a>
+    </section>
+    <div> <audio id="music" src="sounds/powerful.mp3" style="display: none" autoplay></div>
   </body>
-  <script src="characters.js"></script>
-  <script src="scripts.js"></script>
-  <script src="Accueil.js"></script>
 </html>

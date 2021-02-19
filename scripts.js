@@ -21,7 +21,9 @@ const enableMute = () => {
   audio.muted = !audio.muted;
   audioBisou.muted = !audioBisou.muted;
   audioGO.muted = !audioGO.muted;
-  document.getElementById("mute").innerText = audioMusic.muted ? "🔇" : "🔊";
+  document.getElementById("mute").innerHTML = audioMusic.muted
+    ? "<img src='pics/mute.png' class='btnScreen'></img>"
+    : "<img src='pics/sound.png' class='btnScreen'></img>";
 };
 
 function component(width, height, color, x, y, speedX = 0) {
@@ -76,6 +78,7 @@ function componentShip(width, height, color, x, y, image, name, speedX = 0) {
     ctx = myGameArea.context;
     ctx.drawImage(img, this.x, this.y, this.width, this.height);
     ctx.fillStyle = this.color;
+    // Press Start 2P
     ctx.font = "16px sans-serif";
     ctx.fillText(this.name, this.x, this.y - 10);
   };
@@ -231,7 +234,6 @@ const updateHeartMissiles = () => {
         // makes missile disappear
         heartMissiles.splice(hIndex, 1);
         delete heart;
-
         break;
       }
     }
@@ -271,9 +273,15 @@ const getRandom = (min, max) => {
 };
 const pauseGame = () => {
   if (gameIsOver) location.reload();
-  pause
-    ? (myGameArea.interval = setInterval(updateGameArea, 20 - acceleration))
-    : clearInterval(myGameArea.interval);
+  if (pause) {
+    myGameArea.interval = setInterval(updateGameArea, 20 - acceleration);
+    document.getElementById("pause").innerHTML =
+      "<img src='pics/pause.png' class='btnScreen'></img>";
+  } else {
+    clearInterval(myGameArea.interval);
+    document.getElementById("pause").innerHTML =
+      "<img src='pics/play.png' class='btnScreen'></img>";
+  }
   pause = !pause;
 };
 
@@ -285,7 +293,6 @@ const detectColision = () => {
       myShip.y <= enemyShips[i].y + 40 &&
       myShip.y >= enemyShips[i].y - 40
     ) {
-      console.log("colision");
       gameOver();
     }
   }
@@ -317,6 +324,8 @@ const gameOver = () => {
 
 window.addEventListener("keydown", (event) => {
   event.preventDefault();
+  if (event.code.includes("Arrow") || event.code.includes("Space"))
+    document.getElementById(event.code).classList.add("is-pushed");
   switch (event.code) {
     case "ArrowDown":
       movedown();
@@ -337,4 +346,10 @@ window.addEventListener("keydown", (event) => {
       pauseGame();
       break;
   }
+});
+
+window.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  if (event.code.includes("Arrow") || event.code.includes("Space"))
+    document.getElementById(event.code).classList.remove("is-pushed");
 });

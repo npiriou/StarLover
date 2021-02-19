@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Lover</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="button_arcade.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+      integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs="
+      crossorigin="anonymous"
+    ></script>
+
+
+
+  </head>
+  <body class="bodyIndex" onload="startGame()">
+    <h1 class="titre1"><span id="ScoreTitre">0</span> Star Lovers</h1>
+    <audio id="music" src="sounds/MusicGame.mp3" style="display: none" autoplay>
+      <source src="sounds/MusicGame.mp3" type="audio/mp3" />
+    </audio>
+    <div class='barreScore'>
+    <div class="score" id="myScore">
+      Score: 0
+      </div>
+      <div class='btnSpeciaux'>
+        <button id="pause" class="button-special" onclick="pauseGame()">
+          <img src='pics/pause.png' class='btnScreen'></img>
+        </button>
+      <button id="mute" class="mute button-special" onclick="enableMute()">
+        <img src='pics/sound.png' class='btnScreen'></img>
+      </button>
+      <span class='tooltip info'>
+      ?
+      <span class="tooltiptext">Use Arrow keys to pilot the Star Lover and Space to spread love</span>
+      </span>
+    </div>
+    </div>
+
+    <!-- Arcade button  -->
+
+    <div style="text-align: center; width: 480px" id="game">
+      <div class="buttons">
+        <div class="main-buttons">
+          <div class="left-col">
+            <button class="push--skeuo " id='ArrowLeft' onclick="moveleft()"></button>
+          </div>
+          <div class="midle-col">
+            <button class="push--skeuo"id='ArrowUp' onclick="moveup()"></button>
+            <button class="push--skeuo pink"id='Space' onclick="shoot()"></button>
+            <button class="push--skeuo" id='ArrowDown'onclick="movedown()"></button>
+          </div>
+          <div class="right-col">
+            <button class="push--skeuo" id='ArrowRight'onclick="moveright()"></button>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script src="characters.js"></script>
+  <script src="scripts.js"></script>
+</html>
+

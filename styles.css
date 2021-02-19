@@ -49,13 +49,17 @@ canvas {
 #game {
   margin: auto;
 }
-
-.score {
+.barreScore {
+  display: flex;
+  justify-content: space-between;
   width: 780px;
+  background: #0e0a14;
+  padding: 1rem;
   margin: auto;
+}
+.score {
   background: #0e0a14;
   color: #5316b4;
-  padding: 1rem;
   font-size: 20px;
   font-family: sans-serif;
 }
@@ -69,6 +73,10 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.btnScreen {
+  width: 40px;
 }
 
 .left-col,
@@ -88,6 +96,12 @@ button {
 
 .buttons {
   /* position: absolute;
+  left: 180px;
+  top: 200px; */
+}
+
+.buttons {
+  /* position: absolute;
   right: 100px;
   top: 300px; */
   margin-top: 1rem;
@@ -100,7 +114,12 @@ button {
   background-color: rgb(230, 130, 147);
 }
 .button-special {
-  background-color: rgb(12, 62, 226);
+  background-color: #0e0a14;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-left: 15px;
+  outline: none;
 }
 .btnPlay {
   background: none;
@@ -180,4 +199,37 @@ p {
     top: -4000px;
     transform: rotateX(25deg) translateZ(-1500px);
   }
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 15px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.info {
+  font-family: "Press Start 2P", cursive;
+  color: #5316b4;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  top: -11px;
+  right: -5px;
+  font-size: 1.2rem;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
