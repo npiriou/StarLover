@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+.bodyAccueil {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: url("./pics/space-back.jpg");
+  background-repeat: no-repeat;
+}
+
+.bodyAccueil h1 {
+  color: #5316b4;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  margin-top: 6rem;
+  z-index: 2;
+}
+
+body {
+  background-color: black;
+  padding-top: 5rem;
+  overflow-x: hidden;
+}
+
+.titre1 {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  color: #5316b4;
+}
+
+canvas {
+  background-color: #0e0a14;
+  margin: auto;
+  display: block;
+}
+
+#game {
+  margin: auto;
+}
+
+.score {
+  width: 780px;
+  margin: auto;
+  background: #0e0a14;
+  color: #5316b4;
+  padding: 1rem;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+button {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.left-col,
+.midle-col,
+.right-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main-buttons,
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  /* position: absolute;
+  right: 100px;
+  top: 300px; */
+  margin-top: 1rem;
+}
+
+.button-direction {
+  background-color: yellow;
+}
+.button-heart {
+  background-color: rgb(230, 130, 147);
+}
+.button-special {
+  background-color: rgb(12, 62, 226);
+}
+.btnPlay {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  font-family: "Press Start 2P", cursive;
+}
+.btnPlay:hover {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.527);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.507);
+}
+
+section.play {
+  position: fixed;
+  background: black;
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Animation texte intro */
+
+p {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  text-align: justify;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  top: -235px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 120%;
+  perspective: 400px;
+}
+
+.crawl {
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  position: relative;
+  top: 99999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+  width: 1500px;
+}
+
+.crawl span {
+  color: #5316b4;
+}
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -4000px;
+    transform: rotateX(25deg) translateZ(-1500px);
+  }
+}
